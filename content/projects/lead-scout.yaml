@@ -16,9 +16,9 @@ tags:
 links:
   demo: ""
   github: ""
-thumbnail: "/images/screenshots/lead-scout/cli.png"
+thumbnail: "/images/screenshots/lead-scout/cli.svg"
 screenshots:
-  - "/images/screenshots/lead-scout/cli.png"
+  - "/images/screenshots/lead-scout/cli.svg"
 challenge: >
   Manual lead research is tedious and inconsistent. Opening dozens of browser tabs, copying data into spreadsheets, and trying to qualify leads without clear criteria wastes hours every week.
 

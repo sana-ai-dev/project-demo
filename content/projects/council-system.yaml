@@ -17,10 +17,10 @@ tags:
 links:
   demo: ""
   github: ""
-thumbnail: "/images/screenshots/council-system/architecture.png"
+thumbnail: "/images/screenshots/council-system/architecture.svg"
 screenshots:
-  - "/images/screenshots/council-system/architecture.png"
-  - "/images/screenshots/council-system/review.png"
+  - "/images/screenshots/council-system/architecture.svg"
+  - "/images/screenshots/council-system/review.svg"
 challenge: >
   Code review is one of the most valuable quality practices, but it's time-consuming and inconsistent. Human reviewers have different standards, miss different things, and can't always review every PR thoroughly.
 

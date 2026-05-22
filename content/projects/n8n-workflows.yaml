@@ -16,9 +16,9 @@ tags:
 links:
   demo: ""
   github: ""
-thumbnail: "/images/screenshots/n8n-workflows/workflow.png"
+thumbnail: "/images/screenshots/n8n-workflows/workflow.svg"
 screenshots:
-  - "/images/screenshots/n8n-workflows/workflow.png"
+  - "/images/screenshots/n8n-workflows/workflow.svg"
 challenge: >
   Modern IT operations involve dozens of tools — CRMs, email, social platforms, analytics, databases — all requiring manual data movement between them. Manual operations are slow, error-prone, and don't scale.
 

@@ -16,9 +16,9 @@ tags:
 links:
   demo: ""
   github: ""
-thumbnail: "/images/screenshots/opencode-dash-v3/dashboard.png"
+thumbnail: "/images/screenshots/opencode-dash-v3/dashboard.svg"
 screenshots:
-  - "/images/screenshots/opencode-dash-v3/dashboard.png"
+  - "/images/screenshots/opencode-dash-v3/dashboard.svg"
 challenge: >
   OpenCode's agent system generates a lot of activity — tasks, agent switches, tool calls, session data — but there was no way to visualise this information. Debugging agent behaviour and monitoring progress required digging through log files.
 

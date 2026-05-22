@@ -16,9 +16,9 @@ tags:
 links:
   demo: ""
   github: ""
-thumbnail: "/images/screenshots/html-to-pdf-renderer/output.png"
+thumbnail: "/images/screenshots/html-to-pdf-renderer/output.svg"
 screenshots:
-  - "/images/screenshots/html-to-pdf-renderer/output.png"
+  - "/images/screenshots/html-to-pdf-renderer/output.svg"
 challenge: >
   Generating professional PDFs from HTML content is deceptively difficult. Browsers render HTML differently than PDF engines, page breaks happen in awkward places, fonts don't embed correctly, and layouts break across pages.
 

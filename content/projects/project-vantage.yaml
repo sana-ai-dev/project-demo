@@ -18,10 +18,10 @@ tags:
 links:
   demo: ""
   github: ""
-thumbnail: "/images/screenshots/project-vantage/pipeline.png"
+thumbnail: "/images/screenshots/project-vantage/pipeline.svg"
 screenshots:
-  - "/images/screenshots/project-vantage/pipeline.png"
-  - "/images/screenshots/project-vantage/dashboard.png"
+  - "/images/screenshots/project-vantage/pipeline.svg"
+  - "/images/screenshots/project-vantage/dashboard.svg"
 challenge: >
   Lead generation for small agencies is fragmented. You find businesses on one platform, research them on another, reach out via email, and manage everything in spreadsheets. There's no unified pipeline that takes a lead from discovery to delivery.
 

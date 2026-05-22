@@ -17,9 +17,9 @@ tags:
 links:
   demo: ""
   github: ""
-thumbnail: "/images/screenshots/voice-companion/design.png"
+thumbnail: "/images/screenshots/voice-companion/design.svg"
 screenshots:
-  - "/images/screenshots/voice-companion/design.png"
+  - "/images/screenshots/voice-companion/design.svg"
 challenge: >
   Building AI voice applications for children under 5 presents unique challenges — safety constraints, limited vocabulary, attention spans under 30 seconds, and the need for age-appropriate content that's both educational and engaging.
 

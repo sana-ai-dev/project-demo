@@ -18,10 +18,10 @@ tags:
 links:
   demo: ""
   github: ""
-thumbnail: "/images/screenshots/ai-saas-landing/hero.png"
+thumbnail: "/images/screenshots/ai-saas-landing/hero.svg"
 screenshots:
-  - "/images/screenshots/ai-saas-landing/hero.png"
-  - "/images/screenshots/ai-saas-landing/features.png"
+  - "/images/screenshots/ai-saas-landing/hero.svg"
+  - "/images/screenshots/ai-saas-landing/features.svg"
 challenge: >
   SaaS landing pages are a crowded space. Most rely on the same templates — hero image, feature grid, CTA. To stand out, the page needed to deliver an immediate visual impact that communicates innovation and technical sophistication within the first 3 seconds of loading.
 

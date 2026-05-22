@@ -17,9 +17,9 @@ tags:
 links:
   demo: ""
   github: ""
-thumbnail: "/images/screenshots/exec-command-center/dashboard.png"
+thumbnail: "/images/screenshots/exec-command-center/dashboard.svg"
 screenshots:
-  - "/images/screenshots/exec-command-center/dashboard.png"
+  - "/images/screenshots/exec-command-center/dashboard.svg"
 challenge: >
   Executive dashboards are often either too simplistic (a few charts) or too complex (drowning in numbers). The challenge was to build a dashboard that gives executives a clear, actionable view of their business metrics without requiring training or explanation.
 
