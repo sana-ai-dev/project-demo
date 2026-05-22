@@ -1,0 +1,59 @@
+title: "OpenCode Dashboard v3"
+subtitle: "A local-only, read-only dashboard for monitoring OpenCode agent progress, sessions, and task history in real-time."
+category: "Dashboard"
+role: "Developer"
+timeline: "3 weeks"
+status: "Live"
+featured: false
+order: 6
+tags:
+  - "Vite"
+  - "TypeScript"
+  - "Dashboard"
+  - "Observability"
+  - "Local-first"
+  - "UI Design"
+links:
+  demo: ""
+  github: ""
+thumbnail: "/images/screenshots/opencode-dash-v3/dashboard.png"
+screenshots:
+  - "/images/screenshots/opencode-dash-v3/dashboard.png"
+challenge: >
+  OpenCode's agent system generates a lot of activity — tasks, agent switches, tool calls, session data — but there was no way to visualise this information. Debugging agent behaviour and monitoring progress required digging through log files.
+
+  The dashboard needed to be local-only (no data leaves the machine), read-only (no mutations), and work with whatever data format the agent system produces.
+
+approach: >
+  Built with Vite and TypeScript as a static frontend application that reads agent session logs directly from the filesystem. The dashboard polls for new data at configurable intervals and renders a live-updating view of agent activity.
+
+  The UI shows task lists, agent switch history, tool call traces, and session timelines. Each view is a self-contained panel that can be shown, hidden, or rearranged.
+
+  The read-only constraint was actually liberating — it eliminated the need for state management complexity, authentication, and API design. The entire application is a visualiser for existing data.
+keyCode: |
+  // Polling-based data reader — no server needed
+  function useSessionData(pollInterval: number = 5000) {
+    const [sessions, setSessions] = useState<Session[]>([]);
+
+    useEffect(() => {
+      const load = async () => {
+        const data = await window.api.readSessions();
+        setSessions(data);
+      };
+      load();
+      const interval = setInterval(load, pollInterval);
+      return () => clearInterval(interval);
+    }, [pollInterval]);
+
+    return sessions;
+  }
+keyCodeLanguage: "typescript"
+results:
+  - "Real-time agent monitoring without any backend infrastructure"
+  - "Read-only architecture means zero risk of accidental data mutation"
+  - "Drop-in integration — works with existing OpenCode session data without configuration"
+  - "Self-contained panels enable independent development and testing"
+learnings:
+  - "Local-first applications are simpler and more secure than their networked equivalents"
+  - "Polling with configurable intervals is often better than WebSockets for local tools"
+  - "A visual dashboard for agent activity dramatically improves debugging velocity"

@@ -1,0 +1,64 @@
+title: "Project Vantage"
+subtitle: "End-to-end lead generation pipeline — discover businesses, analyse with AI, build personalised dashboards, and deliver."
+category: "Full-Stack"
+role: "Creator & Developer"
+timeline: "Ongoing"
+status: "Live"
+featured: true
+order: 3
+tags:
+  - "Next.js"
+  - "AI/LLM"
+  - "n8n"
+  - "Node.js"
+  - "Dashboard"
+  - "Automation"
+  - "Web Scraping"
+  - "Ollama"
+links:
+  demo: ""
+  github: ""
+thumbnail: "/images/screenshots/project-vantage/pipeline.png"
+screenshots:
+  - "/images/screenshots/project-vantage/pipeline.png"
+  - "/images/screenshots/project-vantage/dashboard.png"
+challenge: >
+  Lead generation for small agencies is fragmented. You find businesses on one platform, research them on another, reach out via email, and manage everything in spreadsheets. There's no unified pipeline that takes a lead from discovery to delivery.
+
+  The goal was to build an integrated system that scouts businesses, qualifies them with AI analysis, builds custom dashboards on demand, and manages the entire pipeline from one place.
+
+approach: >
+  Project Vantage is a modular system with 4 interconnected tools:
+
+  1. **Lead Scout** — Automated business discovery using Playwright for web research, with smart scoring based on predefined criteria
+  2. **Lead Analyzer** — AI-powered analysis using Ollama (local LLM) to evaluate lead quality, sentiment, and potential fit
+  3. **Website Builder** — Generates personalised landing pages for outreach using templates
+  4. **Vantage Dashboard** — Central hub showing pipeline status, lead details, and analytics
+
+  The architecture follows a pipeline pattern: Scout → Analyze → Build → Deliver. Each stage is independent and communicates through a shared database schema, allowing stages to be run manually or automated via n8n workflows.
+keyCode: |
+  # Lead scoring algorithm
+  def score_lead(business_data):
+      score = 0
+      criteria = {
+          'has_website': 15,
+          'active_social': 10,
+          'employee_count > 10': 20,
+          'tech_relevance': 25,
+          'location_match': 15,
+          'decision_maker_identified': 15,
+      }
+      for criterion, points in criteria.items():
+          if evaluate(business_data, criterion):
+              score += points
+      return min(score, 100)
+keyCodeLanguage: "python"
+results:
+  - "Complete lead-to-delivery pipeline in a single system"
+  - "AI-powered lead scoring reduces manual qualification time by ~60%"
+  - "Modular design allows each tool to be used independently or as part of the pipeline"
+  - "Local LLM integration means zero API costs for lead analysis"
+learnings:
+  - "Modular monolith architecture provides the flexibility of microservices without the complexity"
+  - "Local LLMs (Ollama) are viable for business analysis — you don't always need GPT-4"
+  - "A shared data schema across modules eliminates integration headaches"

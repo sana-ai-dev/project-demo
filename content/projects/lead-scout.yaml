@@ -1,0 +1,60 @@
+title: "Lead Scout"
+subtitle: "An automated business discovery tool that researches, scores, and prioritises leads using web automation and smart criteria matching."
+category: "AI & Tools"
+role: "Solo Developer"
+timeline: "1 week"
+status: "Live"
+featured: false
+order: 5
+tags:
+  - "Playwright"
+  - "Node.js"
+  - "Web Scraping"
+  - "Automation"
+  - "Data Processing"
+  - "Lead Generation"
+links:
+  demo: ""
+  github: ""
+thumbnail: "/images/screenshots/lead-scout/cli.png"
+screenshots:
+  - "/images/screenshots/lead-scout/cli.png"
+challenge: >
+  Manual lead research is tedious and inconsistent. Opening dozens of browser tabs, copying data into spreadsheets, and trying to qualify leads without clear criteria wastes hours every week.
+
+  The goal was to build a tool that could automatically discover businesses matching specific criteria, research them thoroughly, and present a scored, prioritised list ready for outreach.
+
+approach: >
+  Lead Scout uses Playwright for browser automation — navigating to business directories, search engines, and social platforms to gather data programmatically. Each lead is scored against configurable criteria (industry relevance, company size, online presence, location, etc.).
+
+  The tool outputs structured YAML/JSON data that feeds directly into the Project Vantage pipeline. Scoring thresholds are configurable, and the tool supports headless and visible modes for debugging.
+
+  I designed the architecture to be extensible — new data sources can be added by implementing a simple scout interface without touching the core scoring engine.
+keyCode: |
+  // Scout interface — add new sources by implementing this
+  interface Scout {
+    name: string;
+    discover(query: string): Promise<RawLead[]>;
+    enrich(lead: RawLead): Promise<EnrichedLead>;
+  }
+
+  // Example: Google Maps scout
+  class GoogleMapsScout implements Scout {
+    async discover(query: string): Promise<RawLead[]> {
+      const page = await browser.newPage();
+      await page.goto(`https://maps.google.com/maps?q=${query}`);
+      return page.evaluate(() => {
+        // Extract business listings from the DOM
+      });
+    }
+  }
+keyCodeLanguage: "typescript"
+results:
+  - "Automates hours of manual research into a single command"
+  - "Configurable scoring criteria ensures only qualified leads reach the pipeline"
+  - "Extensible scout interface allows adding unlimited data sources"
+  - "Integrates directly with Project Vantage as the discovery layer"
+learnings:
+  - "Playwright's auto-waiting is invaluable for scraping — fewer race conditions than Puppeteer"
+  - "Rate limiting and polite scraping are essential for maintaining access to data sources"
+  - "YAML output makes the tool composable — it pipes naturally into other systems"

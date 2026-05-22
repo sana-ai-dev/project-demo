@@ -1,0 +1,62 @@
+title: "TikTok Marketing Suite"
+subtitle: "A complete digital product system for TikTok carousel content — brand guide, viral formula, automated posting workflow, and lead magnet generation."
+category: "Design"
+role: "Solo Creator"
+timeline: "Ongoing"
+status: "Live"
+featured: false
+order: 7
+tags:
+  - "Design Systems"
+  - "Brand Strategy"
+  - "Social Media"
+  - "Content Creation"
+  - "Canva/Design"
+  - "Marketing Automation"
+  - "n8n"
+links:
+  demo: ""
+  github: ""
+thumbnail: "/images/screenshots/tiktok-marketing/carousel.png"
+screenshots:
+  - "/images/screenshots/tiktok-marketing/carousel.png"
+  - "/images/screenshots/tiktok-marketing/brand-guide.png"
+challenge: >
+  TikTok carousel content needs to be visually consistent, psychologically compelling, and produced at volume. Without a system, each post requires starting from scratch — choosing colours, layouts, fonts, and copy.
+
+  The challenge was to create a repeatable content system that maintains brand consistency while allowing creative variation, all optimised for TikTok's 3:4 aspect ratio and algorithm.
+
+approach: >
+  I developed a comprehensive brand system with a spec guide covering colours, typography, iconography, and layout rules. The viral carousel formula research identified patterns in high-performing content — personal narrative, plain English hooks, selfie + AI screenshot pairing, and buzzword mechanic for engagement.
+
+  The workflow is documented as an n8n automation:
+  1. Research → analyse trending formats
+  2. Design → apply brand spec to carousel template
+  3. Post → schedule and publish with optimised hashtags
+  4. Engage → monitor comments, trigger DM lead magnet delivery
+
+  The system includes a 72-hour pause protocol for new accounts to build trust before promoting.
+keyCode: |
+  # Carousel post checklist — encoded as workflow
+  carousel_post:
+    dimensions: "1080x1440"  # 3:4 ratio
+    format: v2               # personal narrative style
+    assets:
+      - "6 PNG panels"
+      - "post-description.txt"
+      - "audio file"
+      - "cheat-sheet lead magnet"
+    engagement:
+      mechanic: "comment keyword → DM link"
+      pause: "72 hours"  # for new accounts
+    hashtags: 3-5 niche  # no broad tags
+keyCodeLanguage: "yaml"
+results:
+  - "Complete design-to-deployment content system for TikTok carousels"
+  - "Viral formula based on empirical research of high-performing content"
+  - "n8n automation handles posting, monitoring, and lead magnet delivery"
+  - "Brand spec ensures visual consistency across all content"
+learnings:
+  - "Content systems beat individual content creation — repeatable processes scale"
+  - "The 72-hour pause before promoting builds trust with the algorithm"
+  - "Niche-specific hashtags outperform broad ones by 3-5x for new accounts"
