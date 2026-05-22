@@ -1,11 +1,7 @@
-interface ContactFormData {
-  name: string;
-  email: string;
-  message: string;
-}
-
 export async function onRequest(context: {
   request: Request;
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  env: Record<string, string>;
 }): Promise<Response> {
   const headers = {
     "Access-Control-Allow-Origin": "*",
@@ -25,7 +21,11 @@ export async function onRequest(context: {
   }
 
   try {
-    const body = (await context.request.json()) as ContactFormData;
+    const body = await context.request.json() as {
+      name: string;
+      email: string;
+      message: string;
+    };
 
     if (!body.name || !body.email || !body.message) {
       return new Response(JSON.stringify({ error: "All fields are required" }), {
@@ -34,7 +34,6 @@ export async function onRequest(context: {
       });
     }
 
-    // Forward to Web3Forms (free tier, 250 submissions/month)
     const web3res = await fetch("https://api.web3forms.com/submit", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
