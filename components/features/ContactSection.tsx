@@ -15,11 +15,10 @@ export function ContactSection() {
     const data = new FormData(form);
 
     try {
-      const res = await fetch("https://api.web3forms.com/submit", {
+      const res = await fetch("/api/contact", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
-          access_key: "YOUR_WEB3FORMS_KEY",
           name: data.get("name"),
           email: data.get("email"),
           message: data.get("message"),
