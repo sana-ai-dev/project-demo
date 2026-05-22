@@ -38,7 +38,7 @@ export async function onRequest(context: {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
-        access_key: context.env.WEB3FORMS_KEY || "",
+        access_key: "d015a894-a261-4995-a32a-48037329307a",
         subject: `Portfolio Contact: ${body.name}`,
         name: body.name,
         email: body.email,
