@@ -1,0 +1,57 @@
+title: "Prompt Finder"
+subtitle: "A searchable database of 3,000+ ChatGPT prompts across 7 categories with instant filtering, bookmarking, and copy-to-clipboard — built as a zero-dependency static HTML app."
+category: "AI & Tools"
+role: "Solo Developer"
+timeline: "2 days"
+status: "Live"
+featured: true
+order: 11
+tags:
+  - "Vanilla JS"
+  - "HTML/CSS"
+  - "Static Site"
+  - "Search Engine"
+  - "UX Design"
+  - "Data Curation"
+links:
+  demo: "https://7d3a3e92.project-demo-5wu.pages.dev/prompt-gallery"
+  github: ""
+thumbnail: "/images/screenshots/prompt-finder/search.svg"
+screenshots:
+  - "/images/screenshots/prompt-finder/search.svg"
+challenge: >
+  Managing hundreds of ChatGPT prompts across multiple PDFs is a nightmare. Each prompt is buried in a document, categories are mixed together, and finding the right prompt for a task means scrolling through pages of unrelated content.
+
+  The challenge was to extract, categorise, and surface all prompts in an instantly searchable interface that works offline with zero setup — no server, no build step, no dependencies.
+
+approach: >
+  I wrote a Python script to parse the source PDFs, extract each prompt with its metadata, and generate a self-contained HTML file with all data inlined as JSON. The result is two static HTML files that open in any browser.
+
+  The main view features a search bar that filters prompts in real-time, category chips for browsing, and a results list with source attribution. The gallery view adds a grid layout with bookmarking (saved to localStorage) and a filtered category page system.
+
+  Both include keyboard navigation, smooth scroll animations, and a dark theme that respects system preferences. The entire app loads instantly — no network requests, no loading spinners.
+
+  For distribution, I generated a zip containing just the two HTML files — 462 KB compressed. Unzip and open in any browser.
+keyCode: |
+  // Core search filter — runs on every keystroke
+  const q = query.value.toLowerCase().trim();
+  const filtered = DATA.filter(p => {
+    if (q === '') return !cat || p.category === cat;
+    const catOk = !cat || p.category === cat;
+    const txtOk = p.text.toLowerCase().includes(q) ||
+      p.keywords.some(k => k.includes(q));
+    return catOk && txtOk;
+  });
+keyCodeLanguage: "javascript"
+results:
+  - "3,273 prompts extracted from PDFs into a searchable interface"
+  - "7 categories with colour-coded filter chips for browsing"
+  - "Instant real-time search across prompt text and keywords"
+  - "Bookmarking system with localStorage persistence"
+  - "Zero dependencies — works offline, no server or build required"
+  - "462 KB zip distribution for instant deployment"
+learnings:
+  - "Static HTML with inlined JSON is the simplest possible deployment — no infra to maintain"
+  - "For content-heavy tools, a search bar + category filter covers 90% of user needs"
+  - "localStorage is perfect for lightweight personalisation (bookmarks) with zero backend"
+  - "Data curation matters as much as the interface — clean categories make or break usability"
