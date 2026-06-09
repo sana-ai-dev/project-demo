@@ -10,7 +10,7 @@ export const site = {
   email: "hello@sana.ai.dev",
   social: {
     github: "https://github.com/sana-ai-dev",
-    linkedin: "https://linkedin.com/in/sanaur-rahman",
+    linkedin: "https://www.linkedin.com/in/sanarahmanai/",
   },
   nav: [
     { label: "Work", href: "#work" },

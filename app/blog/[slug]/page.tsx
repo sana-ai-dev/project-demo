@@ -2,6 +2,8 @@ import { notFound } from "next/navigation";
 import Link from "next/link";
 import { ArrowLeft, Calendar, Clock } from "lucide-react";
 import { Tag } from "@/components/shared/Tag";
+import { BlogSVGPattern } from "@/components/shared/BlogSVGPattern";
+import { getBlogTheme } from "@/lib/blog-theme";
 import { getAllPosts, getPostBySlug, type BlogPost } from "@/lib/posts";
 import type { Metadata } from "next";
 import ReactMarkdown from "react-markdown";
@@ -38,6 +40,8 @@ function PostContent({ post }: { post: BlogPost }) {
     year: "numeric",
   });
 
+  const theme = getBlogTheme(post.slug, post.category);
+
   return (
     <article className="pt-28 pb-20">
       <div className="section-container">
@@ -72,7 +76,16 @@ function PostContent({ post }: { post: BlogPost }) {
             ))}
           </div>
 
-          <hr className="my-10 border-border" />
+          {/* Pastel hero banner */}
+          <div
+            className="relative mt-8 mb-4 rounded-xl overflow-hidden aspect-[21/9]"
+            style={{ backgroundColor: theme.bg }}
+          >
+            <BlogSVGPattern theme={theme} variant="hero" />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/[0.03] to-transparent" />
+          </div>
+
+          <hr className="mb-10 border-border" />
 
           <div className="prose-blog">
             <ReactMarkdown remarkPlugins={[remarkGfm]}>{post.content}</ReactMarkdown>

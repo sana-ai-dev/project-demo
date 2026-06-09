@@ -1,4 +1,24 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1080" height="675" viewBox="0 0 1080 675">
-  <rect width="1080" height="675" fill="#F8F9FA"/>
-  <text x="540" y="360" font-family="Archivo, sans-serif" font-size="200" font-weight="600" fill="#E4E4E7" text-anchor="middle" dominant-baseline="central">G</text>
+  <rect width="1080" height="675" fill="hsl(146, 25%, 90%)"/>
+  
+      <g fill="none" stroke="hsla(146, 33%, 80%, 0.2)" stroke-width="2">
+        <rect x="80" y="50" width="10" height="10" rx="1.5"/>
+        <circle cx="260" cy="55" r="5" fill="hsla(146, 33%, 80%, 0.2)"/>
+        <line x1="420" y1="50" x2="420" y2="70"/>
+        <line x1="410" y1="60" x2="430" y2="60"/>
+        <rect x="600" y="50" width="10" height="10" rx="1.5"/>
+        <circle cx="800" cy="55" r="5" fill="hsla(146, 33%, 80%, 0.2)"/>
+        <circle cx="160" cy="200" r="5" fill="hsla(146, 33%, 80%, 0.2)"/>
+        <line x1="340" y1="195" x2="340" y2="215"/>
+        <line x1="330" y1="205" x2="350" y2="205"/>
+        <rect x="500" y="195" width="10" height="10" rx="1.5"/>
+        <line x1="700" y1="195" x2="700" y2="215"/>
+        <line x1="690" y1="205" x2="710" y2="205"/>
+        <circle cx="900" cy="200" r="5" fill="hsla(146, 33%, 80%, 0.2)"/>
+        <rect x="240" y="320" width="10" height="10" rx="1.5"/>
+        <circle cx="460" cy="325" r="5" fill="hsla(146, 33%, 80%, 0.12)"/>
+        <line x1="660" y1="320" x2="660" y2="340"/>
+        <line x1="650" y1="330" x2="670" y2="330"/>
+      </g>
+  <text x="540" y="360" font-family="Archivo, sans-serif" font-size="200" font-weight="600" fill="hsl(146, 40%, 48%)" text-anchor="middle" dominant-baseline="central" opacity="0.6">G</text>
 </svg>

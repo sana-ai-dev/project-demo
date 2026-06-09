@@ -1,4 +1,22 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1080" height="675" viewBox="0 0 1080 675">
-  <rect width="1080" height="675" fill="#F8F9FA"/>
-  <text x="540" y="360" font-family="Archivo, sans-serif" font-size="200" font-weight="600" fill="#E4E4E7" text-anchor="middle" dominant-baseline="central">B</text>
+  <rect width="1080" height="675" fill="hsl(351, 32%, 93%)"/>
+  
+      <g fill="none" stroke="hsla(351, 33%, 80%, 0.2)" stroke-width="1.5">
+        <circle cx="160" cy="140" r="55"/>
+        <circle cx="160" cy="140" r="35"/>
+        <circle cx="160" cy="140" r="15"/>
+        <circle cx="540" cy="200" r="70"/>
+        <circle cx="540" cy="200" r="45"/>
+        <circle cx="540" cy="200" r="20"/>
+        <circle cx="920" cy="140" r="60"/>
+        <circle cx="920" cy="140" r="38"/>
+        <circle cx="920" cy="140" r="18"/>
+        <circle cx="340" cy="320" r="35"/>
+        <circle cx="340" cy="320" r="18"/>
+        <circle cx="740" cy="300" r="40"/>
+        <circle cx="740" cy="300" r="20"/>
+        <circle cx="80" cy="340" r="25"/>
+        <circle cx="80" cy="340" r="10"/>
+      </g>
+  <text x="540" y="360" font-family="Archivo, sans-serif" font-size="200" font-weight="600" fill="hsl(351, 45%, 51%)" text-anchor="middle" dominant-baseline="central" opacity="0.6">B</text>
 </svg>

@@ -3,6 +3,8 @@
 import { motion } from "framer-motion";
 import { Calendar, Clock, ArrowUpRight } from "lucide-react";
 import { Tag } from "@/components/shared/Tag";
+import { BlogSVGPattern } from "@/components/shared/BlogSVGPattern";
+import { getBlogTheme } from "@/lib/blog-theme";
 import type { BlogPost } from "@/lib/posts";
 
 interface BlogCardProps {
@@ -17,6 +19,8 @@ export function BlogCard({ post, index }: BlogCardProps) {
     year: "numeric",
   });
 
+  const theme = getBlogTheme(post.slug, post.category);
+
   return (
     <motion.a
       href={`/blog/${post.slug}`}
@@ -26,13 +30,20 @@ export function BlogCard({ post, index }: BlogCardProps) {
       transition={{ duration: 0.5, delay: index * 0.08, ease: "easeOut" }}
       className="group block bg-card border border-border rounded-xl overflow-hidden hover:shadow-card-hover hover:border-zinc-300 transition-all duration-300"
     >
-      <div className="aspect-[16/10] bg-surface relative overflow-hidden">
-        <div className="w-full h-full flex items-center justify-center">
-          <span className="font-heading text-5xl font-semibold text-zinc-200 group-hover:text-zinc-300 transition-colors duration-300 select-none">
+      <div
+        className="aspect-[16/10] relative overflow-hidden"
+        style={{ backgroundColor: theme.bg }}
+      >
+        <BlogSVGPattern theme={theme} variant="card" />
+        <div className="absolute inset-0 flex items-center justify-center">
+          <span
+            className="font-heading text-5xl font-semibold select-none transition-all duration-300 group-hover:scale-110"
+            style={{ color: theme.letterColor }}
+          >
             {post.title.charAt(0)}
           </span>
         </div>
-        <div className="absolute inset-0 bg-primary/0 group-hover:bg-primary/3 transition-colors duration-300" />
+        <div className="absolute inset-0 bg-primary/0 group-hover:bg-primary/5 transition-colors duration-300" />
       </div>
 
       <div className="p-5">

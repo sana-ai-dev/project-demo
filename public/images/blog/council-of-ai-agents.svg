@@ -1,4 +1,14 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1080" height="675" viewBox="0 0 1080 675">
-  <rect width="1080" height="675" fill="#F8F9FA"/>
-  <text x="540" y="360" font-family="Archivo, sans-serif" font-size="200" font-weight="600" fill="#E4E4E7" text-anchor="middle" dominant-baseline="central">B</text>
+  <rect width="1080" height="675" fill="hsl(50, 25%, 90%)"/>
+  
+      <g fill="none" stroke="hsla(50, 33%, 80%, 0.2)" stroke-width="2">
+        <path d="M140 60 L280 20 L420 60 L280 100 Z"/>
+        <path d="M540 280 L660 240 L780 280 L660 320 Z"/>
+        <line x1="80" y1="280" x2="220" y2="120"/>
+        <line x1="860" y1="80" x2="980" y2="260"/>
+        <polygon points="440,200 500,140 560,200 500,260"/>
+        <polygon points="680,80 720,40 760,80 720,120" fill="hsla(50, 33%, 80%, 0.12)"/>
+        <polygon points="200,340 230,310 260,340 230,370" fill="hsla(50, 33%, 80%, 0.12)"/>
+      </g>
+  <text x="540" y="360" font-family="Archivo, sans-serif" font-size="200" font-weight="600" fill="hsl(50, 40%, 48%)" text-anchor="middle" dominant-baseline="central" opacity="0.6">B</text>
 </svg>
