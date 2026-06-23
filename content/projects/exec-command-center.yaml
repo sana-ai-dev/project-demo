@@ -1,0 +1,66 @@
+title: "Executive Command Center"
+subtitle: "A real-time executive dashboard built with Next.js and Base UI — designed for data-driven decision making at a glance."
+category: "Dashboard"
+role: "Solo Developer"
+timeline: "2 weeks"
+status: "In Development"
+featured: false
+order: 4
+tags:
+  - "Next.js"
+  - "Base UI"
+  - "TypeScript"
+  - "Tailwind CSS"
+  - "Dashboard"
+  - "Data Visualisation"
+  - "Real-time"
+links:
+  demo: ""
+  github: ""
+thumbnail: "/images/screenshots/exec-command-center/dashboard.svg"
+screenshots:
+  - "/images/screenshots/exec-command-center/dashboard.svg"
+challenge: >
+  Executive dashboards are often either too simplistic (a few charts) or too complex (drowning in numbers). The challenge was to build a dashboard that gives executives a clear, actionable view of their business metrics without requiring training or explanation.
+
+  The dashboard needed to be modular, real-time capable, and extensible — allowing new widgets to be added without restructuring the entire layout.
+
+approach: >
+  I built the dashboard using Next.js 15 with a widget-based architecture. Each metric is a self-contained widget with its own data fetching, loading state, and display logic. The layout uses Base UI's composable components for consistency and accessibility.
+
+  The design philosophy was "glanceable insights" — every widget should communicate its data within 2 seconds. I used colour coding (green/amber/red) for status indicators, trend arrows for direction, and minimal charting for patterns.
+
+  Widgets are independently lazy-loaded so underperforming data sources don't block the entire dashboard. The layout supports drag-to-reorder (future feature) and responsive breakpoints that reorganise widgets automatically.
+keyCode: |
+  // Widget component pattern — self-contained, lazy-loadable
+  interface WidgetProps {
+    title: string;
+    refreshInterval?: number;  // seconds
+    children: React.ReactNode;
+  }
+
+  function Widget({ title, refreshInterval, children }: WidgetProps) {
+    return (
+      <div className="bg-white rounded-xl border p-4 shadow-sm">
+        <div className="flex items-center justify-between mb-3">
+          <h3 className="font-heading font-semibold text-sm">{title}</h3>
+          {refreshInterval && (
+            <span className="text-xs text-muted">
+              Updates every {refreshInterval}s
+            </span>
+          )}
+        </div>
+        {children}
+      </div>
+    );
+  }
+keyCodeLanguage: "typescript"
+results:
+  - "Widget-based architecture enables independent development and testing of each metric"
+  - "Glanceable design philosophy reduces cognitive load for executives"
+  - "Responsive layout adapts from mobile (single column) to ultra-wide (4+ columns)"
+  - "Modular data fetching prevents one slow source from blocking the entire view"
+learnings:
+  - "Widget isolation (independent data loading) is more important than sharing state"
+  - "Skeleton loading states make the dashboard feel fast even when data is slow"
+  - "Design for the 'glance test' — if a widget doesn't communicate in 2 seconds, it needs redesign"

@@ -1,0 +1,72 @@
+title: "n8n Automation Workflows"
+subtitle: "A suite of n8n workflows powering IT automation across lead generation, content publishing, monitoring, and data processing pipelines."
+category: "Automation"
+role: "Automation Architect"
+timeline: "Ongoing"
+status: "Live"
+featured: false
+order: 10
+tags:
+  - "n8n"
+  - "Automation"
+  - "Workflow Design"
+  - "API Integration"
+  - "IT Operations"
+  - "DevOps"
+links:
+  demo: ""
+  github: ""
+thumbnail: "/images/screenshots/n8n-workflows/workflow.svg"
+screenshots:
+  - "/images/screenshots/n8n-workflows/workflow.svg"
+challenge: >
+  Modern IT operations involve dozens of tools — CRMs, email, social platforms, analytics, databases — all requiring manual data movement between them. Manual operations are slow, error-prone, and don't scale.
+
+  The goal was to build a reliable automation layer using n8n that connects the entire toolchain, handling data transformation, error recovery, and monitoring without manual intervention.
+
+approach: >
+  I designed a suite of n8n workflows following a modular pattern — each workflow has a single responsibility and communicates with others through shared data stores and webhooks.
+
+  Core workflows include:
+  1. **Lead Pipeline** — connects Lead Scout output → CRM enrichment → email sequencing
+  2. **Content Publisher** — scheduled content creation → review → cross-platform posting
+  3. **System Monitor** — health checks → alerting → auto-remediation
+  4. **Data Sync** — scheduled ETL between databases, APIs, and storage
+
+  Each workflow includes error handling (retry with backoff, dead-letter queues, notification on failure) and comprehensive logging for debugging.
+
+  I followed n8n best practices: sub-workflows for reusable logic, environment variables for secrets, and expression-based data transformation.
+keyCode: |
+  // Error handling pattern used across all workflows
+  {
+    "name": "Handle Error",
+    "type": "switch",
+    "parameters": {
+      "conditions": [
+        {
+          "value1": "{{ $json.error }}",
+          "operations": [
+            {
+              "value2": "rate_limit",
+              "output": "retry_with_backoff"
+            },
+            {
+              "value2": "auth_error",
+              "output": "notify_admin"
+            }
+          ]
+        }
+      ],
+      "default": "log_and_continue"
+    }
+  }
+keyCodeLanguage: "json"
+results:
+  - "Every workflow includes retry logic, error notification, and audit logging"
+  - "Reusable sub-workflows reduce duplication and standardise error handling"
+  - "Environment-variable-based configuration enables secure multi-environment deployment"
+  - "Webhook-based communication between workflows supports decoupled scaling"
+learnings:
+  - "n8n expressions with error handling are essential for production-grade automation"
+  - "Sub-workflows are the key to maintainability — never repeat the same logic"
+  - "Always design for failure — every workflow should assume external services will go down"

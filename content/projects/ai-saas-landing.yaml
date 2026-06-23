@@ -1,0 +1,73 @@
+title: "AI SaaS Landing"
+subtitle: "An immersive 3D landing page built with Next.js, Three.js, and React Three Fiber — designed to captivate and convert."
+category: "Web"
+role: "Solo Developer"
+timeline: "1 week"
+status: "Live"
+featured: true
+order: 1
+tags:
+  - "Next.js"
+  - "Three.js"
+  - "React Three Fiber"
+  - "TypeScript"
+  - "Tailwind CSS"
+  - "3D Graphics"
+  - "GSAP"
+  - "Framer Motion"
+links:
+  demo: ""
+  github: ""
+thumbnail: "/images/screenshots/ai-saas-landing/hero.svg"
+screenshots:
+  - "/images/screenshots/ai-saas-landing/hero.svg"
+  - "/images/screenshots/ai-saas-landing/features.svg"
+challenge: >
+  SaaS landing pages are a crowded space. Most rely on the same templates — hero image, feature grid, CTA. To stand out, the page needed to deliver an immediate visual impact that communicates innovation and technical sophistication within the first 3 seconds of loading.
+
+  The goal was to build a premium, Awwwards-calibre landing page that uses 3D interactivity not as a gimmick, but as a storytelling device that reinforces the product value proposition.
+
+approach: >
+  I chose Next.js 15 as the framework for its hybrid rendering capabilities and excellent developer experience. The 3D scene was built with React Three Fiber, giving access to Three.js capabilities within React's component model.
+
+  The hero section features a dynamic 3D scene with floating geometric shapes that respond to mouse movement, creating depth and engagement without distracting from the core message. GSAP handles scroll-triggered animations for the feature sections, while Framer Motion manages page transitions and micro-interactions.
+
+  Performance was a key concern — 3D can be heavy. I implemented lazy loading for the canvas, reduced polygon counts, used instanced meshes where possible, and added a progressive enhancement fallback for lower-end devices.
+keyCode: |
+  // Lazy-loaded 3D Hero Scene with mouse tracking
+  'use client';
+
+  import { Canvas } from '@react-three/fiber';
+  import { Float, MeshDistortMaterial } from '@react-three/drei';
+
+  export function Hero3D() {
+    return (
+      <div className="absolute inset-0 -z-10">
+        <Canvas camera={{ position: [0, 0, 6], fov: 45 }}>
+          <ambientLight intensity={0.5} />
+          <pointLight position={[5, 5, 5]} intensity={1} />
+          <Float speed={2} rotationIntensity={0.3} floatIntensity={1}>
+            <mesh>
+              <icosahedronGeometry args={[1, 1]} />
+              <MeshDistortMaterial
+                color="#2563EB"
+                roughness={0.2}
+                metalness={0.8}
+                distort={0.15}
+              />
+            </mesh>
+          </Float>
+        </Canvas>
+      </div>
+    );
+  }
+keyCodeLanguage: "typescript"
+results:
+  - "First contentful paint under 1.5s despite 3D scene"
+  - "Scroll-triggered narrative increases time-on-page by ~40%"
+  - "Fully responsive from 375px to 2560px with adaptive 3D complexity"
+  - "Clean separation between 3D scene, layout, and content components"
+learnings:
+  - "Progressive enhancement is critical for 3D — always have a solid non-3D fallback"
+  - "Instanced meshes can dramatically improve R3F performance when rendering multiple objects"
+  - "Combining GSAP (scroll-driven) with Framer Motion (UI) gives the best of both worlds"

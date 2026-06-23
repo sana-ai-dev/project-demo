@@ -1,0 +1,65 @@
+title: "Council Multi-Agent System"
+subtitle: "A port of Anthropic's Claude Code council concept — 7 specialised AI agents collaboratively reviewing code across security, architecture, performance, and quality."
+category: "AI & Tools"
+role: "System Architect"
+timeline: "2 weeks"
+status: "Live"
+featured: true
+order: 2
+tags:
+  - "AI Agents"
+  - "System Design"
+  - "LLM Orchestration"
+  - "Code Review"
+  - "Multi-Agent"
+  - "Prompt Engineering"
+  - "TypeScript"
+links:
+  demo: ""
+  github: ""
+thumbnail: "/images/screenshots/council-system/architecture.svg"
+screenshots:
+  - "/images/screenshots/council-system/architecture.svg"
+  - "/images/screenshots/council-system/review.svg"
+challenge: >
+  Code review is one of the most valuable quality practices, but it's time-consuming and inconsistent. Human reviewers have different standards, miss different things, and can't always review every PR thoroughly.
+
+  The challenge was to build a multi-agent system where specialised AI agents could each review code from their domain of expertise — security, architecture, performance, code quality, documentation — and synthesise their findings into a cohesive, actionable report.
+
+approach: >
+  I designed a modular agent architecture with a central orchestrator agent and 6 specialist council members, each with deeply tuned system prompts. The orchestrator analyses the incoming request, determines which council members are relevant, delegates tasks in parallel, and synthesises the results.
+
+  Each council member has:
+  - A role-specific system prompt with expertise boundaries
+  - Permission restrictions (read-only for reviewers, ask-before-edit for suggestions)
+  - Structured output format with severity levels and line-number references
+
+  The system uses OpenCode's existing agent framework, extending it with a council skill that provides shared context, review templates, and cross-referencing capabilities.
+keyCode: |
+  # Council orchestrator delegates to specialists
+  def delegate_review(code_context):
+      members = select_members(code_context)
+      reviews = parallel_map(members, lambda m:
+          m.review(code_context)
+      )
+      return synthesize(reviews)
+
+  # Each member returns structured feedback
+  class CouncilMember:
+      def review(self, context):
+          return {
+              "findings": self.analyze(context),
+              "severity": self.assess_severity(),
+              "suggestions": self.recommend_fixes(),
+              "confidence": self.rate_confidence()
+          }
+keyCodeLanguage: "python"
+results:
+  - "7 specialised agents providing comprehensive multi-perspective reviews"
+  - "Parallel execution reduces review time from minutes to seconds"
+  - "Structured output with severity levels, line references, and fix suggestions"
+  - "Modular design allows adding new council members without changing the orchestrator"
+learnings:
+  - "Parallel agent execution requires careful prompt isolation to prevent context bleed"
+  - "A skilled orchestrator prompt is more important than individual member tuning"
+  - "Permission boundaries (read vs write) are critical for safety in autonomous code review"

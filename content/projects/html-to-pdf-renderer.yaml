@@ -1,0 +1,70 @@
+title: "HTML-to-PDF Renderer"
+subtitle: "An internal tool that converts HTML reports into professional, print-ready PDFs with smart page sizing and consistent formatting."
+category: "Tool"
+role: "Solo Developer"
+timeline: "3 days"
+status: "Live"
+featured: false
+order: 9
+tags:
+  - "Node.js"
+  - "Puppeteer/Playwright"
+  - "HTML/CSS"
+  - "PDF Generation"
+  - "Internal Tool"
+  - "Automation"
+links:
+  demo: ""
+  github: ""
+thumbnail: "/images/screenshots/html-to-pdf-renderer/output.svg"
+screenshots:
+  - "/images/screenshots/html-to-pdf-renderer/output.svg"
+challenge: >
+  Generating professional PDFs from HTML content is deceptively difficult. Browsers render HTML differently than PDF engines, page breaks happen in awkward places, fonts don't embed correctly, and layouts break across pages.
+
+  The tool needed to take standard HTML reports and produce consistently professional PDF output without manual tweaking for each document.
+
+approach: >
+  I built the renderer using Playwright (for consistent Chromium rendering) with a set of CSS rules specifically designed for print output. The key innovations were:
+
+  1. **Smart page sizing** — automatically detects content width and adjusts page dimensions
+  2. **Orphan/widow control** — CSS rules prevent heading/page-break orphans
+  3. **Font embedding** — automated font subsetting and embedding for consistent rendering
+  4. **Header/footer injection** — adds running headers and page numbers without modifying source HTML
+
+  The tool is a command-line interface that accepts an HTML file (or URL) and outputs a PDF, with options for page size, margins, orientation, and header content.
+keyCode: |
+  // Print-specific CSS for clean PDF output
+  @media print {
+    @page {
+      margin: 20mm 15mm;
+      @top-center {
+        content: element(header);
+      }
+      @bottom-center {
+        content: counter(page);
+        font-size: 9pt;
+        color: #666;
+      }
+    }
+
+    h1, h2, h3, h4 {
+      page-break-after: avoid;
+      break-after: avoid;
+    }
+
+    pre, blockquote, table {
+      page-break-inside: avoid;
+      break-inside: avoid;
+    }
+  }
+keyCodeLanguage: "css"
+results:
+  - "Consistent PDF output from any well-formed HTML input"
+  - "Smart page sizing eliminates manual dimension adjustments"
+  - "Automated header/footer injection reduces template complexity"
+  - "Sub-2 second generation time for standard report lengths"
+learnings:
+  - "CSS print media queries are more powerful than most developers realise"
+  - "Playwright produces more consistent PDF output than dedicated PDF libraries"
+  - "Page break control requires both CSS rules and content-aware logic"

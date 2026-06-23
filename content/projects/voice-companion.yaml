@@ -1,0 +1,47 @@
+title: "Voice Companion for 4-Year-Olds"
+subtitle: "An AI-powered voice application designed specifically for preschool-aged children — safe, engaging, and developmentally appropriate."
+category: "AI & Tools"
+role: "Product Designer & Developer"
+timeline: "2 weeks"
+status: "Concept / Feasibility"
+featured: false
+order: 8
+tags:
+  - "AI"
+  - "Voice UI"
+  - "Child Safety"
+  - "Product Design"
+  - "UX Research"
+  - "Speech Recognition"
+  - "LLM"
+links:
+  demo: ""
+  github: ""
+thumbnail: "/images/screenshots/voice-companion/design.svg"
+screenshots:
+  - "/images/screenshots/voice-companion/design.svg"
+challenge: >
+  Building AI voice applications for children under 5 presents unique challenges — safety constraints, limited vocabulary, attention spans under 30 seconds, and the need for age-appropriate content that's both educational and engaging.
+
+  Most voice AI products are designed for adults and adapted for children. This project took a child-first approach, designing the entire experience around the cognitive and emotional needs of a 4-year-old.
+
+approach: >
+  I started with a Product Design Requirements (PDR) document that analysed the specific needs of 4-year-old users — their language patterns, attention spans, safety requirements, and interaction preferences.
+
+  Key design decisions:
+  - Voice-only interface (no screen required) to reduce eye strain and encourage imagination
+  - Short interaction cycles (15-30 seconds) matching attention span research
+  - Strict content filtering with multiple safety layers
+  - Parental controls with activity summaries
+  - Encouragement-focused responses that build confidence
+
+  The feasibility study confirmed that modern LLMs, combined with speech-to-text and text-to-speech pipelines, can deliver a compelling experience — but careful prompt engineering is needed to maintain age-appropriate responses.
+results:
+  - "Comprehensive feasibility report covering technical, safety, and UX requirements"
+  - "Product Design Requirements document detailing all user stories and acceptance criteria"
+  - "Safety-first architecture with multi-layer content filtering"
+  - "Age-appropriate interaction patterns based on child development research"
+learnings:
+  - "Designing for children requires fundamentally different UX patterns — you can't just 'simplify' adult UIs"
+  - "Voice latency is critical for children — responses faster than 1s maintain engagement"
+  - "Safety filtering needs to be proactive, not reactive — prevention beats moderation"
