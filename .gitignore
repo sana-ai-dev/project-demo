@@ -20,6 +20,3 @@ Thumbs.db
 dist/
 build/
 *.tsbuildinfo
-
-desktop.ini
-out/
